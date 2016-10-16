@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<xliff version="1.0">
+    <file source-language="en" datatype="plaintext" original="messages" date="14.10.16T16:14Z" product-name="ts_news">
+        <header/>
+        <body>
+            <trans-unit id="news_page_type" xml:space="preserve">
+                <source>News page</source>
+            </trans-unit>
+            <trans-unit id="pages.news_datetime" xml:space="preserve">
+                <source>News datetime</source>
+            </trans-unit>
+            <trans-unit id="CType.news_list" xml:space="preserve">
+                <source>News listing</source>
+            </trans-unit>
+            <trans-unit id="CType.news_list.records" xml:space="preserve">
+                <source>Pages with news sub elements</source>
+            </trans-unit>
+        </body>
+    </file>
+</xliff>

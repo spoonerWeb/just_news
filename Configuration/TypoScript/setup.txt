@@ -1,0 +1,13 @@
+lib.fluidContent {
+    templateRootPaths {
+        30 = EXT:ts_news/Resources/Private/Templates
+    }
+    partialRootPaths {
+        30 = EXT:ts_news/Resources/Private/Partials
+    }
+    layoutRootPaths {
+        30 = EXT:ts_news/Resources/Private/Layouts
+    }
+}
+
+<INCLUDE_TYPOSCRIPT: source="DIR:EXT:ts_news/Configuration/TypoScript/RenderingDefinitions" extensions="ts">
