@@ -1,0 +1,21 @@
+<html xmlns:f="http://xsd.helhum.io/ns/typo3/cms-fluid/master/ViewHelpers">
+<f:debug>{_all}</f:debug>
+<li>
+	<f:if condition="{newsItem.images -> f:count()} > 0">
+		<div class="image">
+			<f:image src="{newsItem.images.0.uid}" treatIdAsReference="1" maxWidth="200" />
+		</div>
+	</f:if>
+	<div class="content">
+		<h3>
+			<f:link.page pageUid="{newsItem.data.uid}">
+				{newsItem.data.title} ({newsItem.data.news_datetime -> f:format.date(format:'{settings.list.dateFormat}')})
+			</f:link.page>
+		</h3>
+		<p>
+			{newsItem.data.abstract}<br>
+			<f:link.page pageUid="{newsItem.data.uid}">Read more</f:link.page>
+		</p>
+	</div>
+</li>
+</html>
