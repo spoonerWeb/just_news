@@ -1,0 +1,27 @@
+{
+  "name": "spooner-web/ts_news",
+  "type": "typo3-cms-extension",
+  "description": "Easy and lightweight news extension.",
+  "homepage": "https://typo3.org",
+  "license": [
+    "GPL-2.0+"
+  ],
+  "keywords": [
+    "TYPO3",
+    "extension",
+    "news",
+    "easy",
+    "lightweight"
+  ],
+  "authors": [
+    {
+      "name": "Thomas Löffler",
+      "email": "loeffler@spooner-web.de",
+      "homepage": "https://spooner-web.de",
+      "role": "Developer"
+    }
+  ],
+  "require": {
+    "typo3/cms": ">7.6"
+  }
+}
