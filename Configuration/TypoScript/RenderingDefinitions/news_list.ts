@@ -1,6 +1,5 @@
 tt_content {
-    news_list < lib.fluidContent
-    news_list = FLUIDTEMPLATE
+    news_list =< lib.fluidContent
     news_list {
         templateName = NewsList
         dataProcessing {
