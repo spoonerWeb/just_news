@@ -21,7 +21,7 @@ $EM_CONF[$_EXTKEY] = [
     'author' => 'Thomas Löffler',
     'constraints' => [
         'depends' => [
-            'typo3' => '7.6.0'
+            'typo3' => '7.6.0-8.99.99'
         ],
         'conflicts' => [],
         'suggests' => []
