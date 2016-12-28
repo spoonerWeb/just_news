@@ -12,7 +12,7 @@
  * The TYPO3 project - inspiring people to share!
  */
 
-$languageFilePrefix = 'LLL:EXT:ts_news/Resources/Private/Language/locallang_be.xlf:';
+$languageFilePrefix = 'LLL:EXT:just_news/Resources/Private/Language/locallang_be.xlf:';
 $newsDoktype = 12;
 
 $fields = [
@@ -54,7 +54,7 @@ $GLOBALS['TCA']['pages']['types'][$newsDoktype]['showitem'] = str_replace(
 );
 
 \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::registerPageTSConfigFile(
-    'ts_news',
+    'just_news',
     'Configuration/TypoScript/PageTS/news.ts',
     'News pages'
 );

@@ -13,7 +13,7 @@
  */
 
 $frontendLanguageFilePrefix = 'LLL:EXT:frontend/Resources/Private/Language/locallang_ttc.xlf:';
-$languageFilePrefix = 'LLL:EXT:ts_news/Resources/Private/Language/locallang_be.xlf:';
+$languageFilePrefix = 'LLL:EXT:just_news/Resources/Private/Language/locallang_be.xlf:';
 
 \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::addTcaSelectItem(
     'tt_content',
