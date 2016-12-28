@@ -13,8 +13,8 @@
  */
 
 $EM_CONF[$_EXTKEY] = [
-    'title' => 'News by TypoScript',
-    'description' => 'A news system built by core features. Easy to use, easy to extend.',
+    'title' => 'Just News - only core features used',
+    'description' => 'A news system used with core features. Easy to use, easy to extend.',
     'category' => 'fe',
     'version' => '0.0.2',
     'state' => 'beta',
