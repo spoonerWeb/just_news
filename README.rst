@@ -10,6 +10,7 @@ Install via composer
 --------------------
 
 .. code-block: none
+
    composer require spooner-web/just_news
 
 Install via Extension Manager
