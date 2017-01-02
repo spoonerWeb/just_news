@@ -21,6 +21,7 @@ ter-upload:
     - export COMPOSER_CACHE_DIR=/cache/composer
   script:
     - composer install
+    - composer require namelesscoder/typo3-repository-client
     - export TYPO3_PATH_WEB="$PWD/.Build/Web"
     - >
       if [ -n "$CI_BUILD_TAG" ] && [ -n "$T3O_USERNAME" ] && [ -n "$T3O_PASSWORD" ]; then
