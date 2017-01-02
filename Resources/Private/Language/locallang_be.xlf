@@ -15,6 +15,12 @@
             <trans-unit id="CType.news_list.records" xml:space="preserve">
                 <source>Pages with news sub elements</source>
             </trans-unit>
+            <trans-unit id="wizard.title" xml:space="preserve">
+                <source>News listing (just_news)</source>
+            </trans-unit>
+            <trans-unit id="wizard.description" xml:space="preserve">
+                <source>News list with possibility to filter for sysfolder and/or categories</source>
+            </trans-unit>
         </body>
     </file>
 </xliff>
