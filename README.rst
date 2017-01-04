@@ -46,7 +46,7 @@ Frequently asked questions
 Is there a possibility to add content elements to an article?
 -------------------------------------------------------------
 As you are using a page as article you only have the possibility to use content elements.
-But think about the possibilities you have with the freedom of using any content element.
+But think about the possibilities you have with the freedom of using any content element (and even plugins).
 
 How can I use different layouts for an article?
 -----------------------------------------------
