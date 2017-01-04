@@ -41,13 +41,13 @@ To change the markup of the news listing you can add this code into TypoScript:
 
     lib.fluidContent {
         templateRootPaths {
-            40 = EXT:spooner_layout/Resources/Private/Templates
+            40 = EXT:my_ext/Resources/Private/Templates
         }
         partialRootPaths {
-            40 = EXT:spooner_layout/Resources/Private/Partials
+            40 = EXT:my_ext/Resources/Private/Partials
         }
         layoutRootPaths {
-            40 = EXT:spooner_layout/Resources/Private/Layouts
+            40 = EXT:my_ext/Resources/Private/Layouts
         }
     }
 
