@@ -27,10 +27,10 @@ Integrate extension
 -------------------
 
 1. Include static template
-2. Create a sysfolder
-3. Add a page below the sysfolder to create a news article
+2. Create a sys folder
+3. Add a page below the sys folder to create a news article
 4. Create a content element and switch to ``News listing``
-5. Add the sysfolder to ``Pages with news sub elements``
+5. Add the sys folder to ``Pages with news sub elements``
 
 Edit extension templates
 ------------------------
@@ -54,8 +54,8 @@ As you are using a page as article you are free to use every layout (e.g. backen
 
 Is there a configuration for RealURL?
 -------------------------------------
-You don't need a configuration as you are free to create a speaking url by your sysfolder and page structure.
-If you set the sysfolder named ``news`` below root page and add your articles into the sysfolder you will have the url
+You don't need a configuration as you are free to create a speaking url by your sys folder and page structure.
+If you set the sys folder named ``news`` below root page and add your articles into the sys folder you will have the url
 ``example.com/news/the-title-of-your-article``. And all without extra configuration. Cool, hm?
 
 I want to make a TYPO3 upgrade. Do I need to be careful?
