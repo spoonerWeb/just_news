@@ -8,7 +8,7 @@ Installation
 Install via composer
 --------------------
 
-.. code-block::
+.. code-block:: shell
 
    composer require spooner-web/just_news
 
@@ -37,7 +37,7 @@ Enhancing extension
 
 To change the markup of the news listing you can add this code into TypoScript:
 
-.. code-block::
+.. code-block:: typoscript
 
     lib.fluidContent {
         templateRootPaths {
