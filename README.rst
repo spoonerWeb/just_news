@@ -28,9 +28,43 @@ Integrate extension
 
 1. Include static template
 2. Create a sysfolder
-3. Add a page below the sysfolder to create a news article
+3. Edit the page properties and add PageTS ``News pages (sysfolder)`` to make sure only news pages (or sysfolders) will be created below
 4. Create a content element and switch to ``News listing``
 5. Add the sysfolder to ``Pages with news sub elements``
+
+Enhancing extension
+-------------------
+
+To change the markup of the news listing you can add this code into TypoScript:
+
+.. code-block::
+
+    lib.fluidContent {
+        templateRootPaths {
+            40 = EXT:spooner_layout/Resources/Private/Templates
+        }
+        partialRootPaths {
+            40 = EXT:spooner_layout/Resources/Private/Partials
+        }
+        layoutRootPaths {
+            40 = EXT:spooner_layout/Resources/Private/Layouts
+        }
+    }
+
+Editors Guide
+=============
+
+Add a news article
+------------------
+
+1. Go to the news sysfolder
+2. Create a news page below the sysfolder (the sorting is irrelevant as the news articles will be sorted by datetime in the listing)
+3. Title and datetime are mandatory fields
+4. You can add an image in resources tab and an abstract in metadata tab which will be shown in the listing
+5. You can add a sys_category to categorize the article
+6. To create content, just add content elements to this page
+7. You can set visibility settings as well as start- and endtime to either the news page or even the content elements
+
 
 Edit extension templates
 ------------------------
