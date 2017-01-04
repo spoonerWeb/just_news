@@ -79,7 +79,7 @@ call_user_func(
             [
                 'ctrl' => [
                     'typeicon_classes' => [
-                        $newsDoktype => 'apps-pagetree-page-advanced',
+                        $newsDoktype => 'apps-pagetree-justnews',
                     ],
                 ],
             ]
