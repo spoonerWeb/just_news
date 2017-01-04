@@ -13,7 +13,7 @@
  */
 
 $EM_CONF[$_EXTKEY] = [
-    'title' => 'Just News - only core features used',
+    'title' => 'Just News - easy like bicycling',
     'description' => 'A news system used with core features. Easy to use, easy to extend.',
     'category' => 'fe',
     'version' => '0.0.5',
