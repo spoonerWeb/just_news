@@ -35,6 +35,10 @@ Integrate extension
 Enhancing extension
 -------------------
 
+By adding template, partial and layout paths to ``lib.fluidContent`` with their
+subsections ``templateRootPaths``, ``partialRootPaths`` and ``layoutRootPaths`` you can
+create own templates and override the original ones.
+
 To change the markup of the news listing you can add this code into TypoScript:
 
 .. code-block:: typoscript
@@ -64,15 +68,6 @@ Add a news article
 5. You can add a sys_category to categorize the article
 6. To create content, just add content elements to this page
 7. You can set visibility settings as well as start- and endtime to either the news page or even the content elements
-
-
-Edit extension templates
-------------------------
-
-By adding template, partial and layout paths to ``lib.fluidContent`` with their
-subsections ``templateRootPaths``, ``partialRootPaths`` and ``layoutRootPaths`` you can
-create own templates and override the original ones.
-
 
 Frequently asked questions
 ==========================
