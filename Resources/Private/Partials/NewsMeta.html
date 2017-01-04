@@ -1,0 +1,18 @@
+<html xmlns:f="http://xsd.helhum.io/ns/typo3/cms-fluid/master/ViewHelpers">
+<f:if condition="{newsItem.data.author}">
+	<f:if condition="{newsItem.data.author_email">
+		<f:then>
+			<f:link.email email="{newsItem.data.author_email}">{newsItem.data.author}</f:link.email>
+		</f:then>
+		<f:else>
+			{newsItem.data.author}
+		</f:else>
+	</f:if>
+	<f:if condition="{newsItem.data.keywords}">
+		|
+	</f:if>
+</f:if>
+<f:if condition="{newsItem.data.keywords}">
+	{newsItem.data.keywords}
+</f:if>
+</html>
