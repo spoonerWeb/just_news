@@ -64,3 +64,16 @@ As long as you are using ``fluid_styled_content``, you don't have to care of any
 The extension is using TYPO3 core features and don't need any extra tables, Extbase models or repositories.
 
 
+Contribute
+==========
+
+Feel free to contribute or test the extension!
+Here you can get in contact:
+
+* `GitLab project`_
+* `GitHub project (just a mirror)`_
+* `Slack channel`_
+
+.. _GitLab project: https://git.spooner.io/spooner/just_news
+.. _GitHub project (just a mirror): https://github.com/spoonerWeb/just_news
+.. _Slack channel: https://typo3.slack.com/messages/ext-just_news/
