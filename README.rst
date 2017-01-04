@@ -8,7 +8,7 @@ Installation
 Install via composer
 --------------------
 
-.. code-block::
+.. code-block:: shell
 
    composer require spooner-web/just_news
 
@@ -27,10 +27,44 @@ Integrate extension
 -------------------
 
 1. Include static template
-2. Create a sysfolder
-3. Add a page below the sysfolder to create a news article
+2. Create a sys folder
+3. Edit the page properties and add PageTS ``News pages (sysfolder)`` to make sure only news pages (or sys folders) will be created below
 4. Create a content element and switch to ``News listing``
-5. Add the sysfolder to ``Pages with news sub elements``
+5. Add the sys folder to ``Pages with news sub elements``
+
+Enhancing extension
+-------------------
+
+To change the markup of the news listing you can add this code into TypoScript:
+
+.. code-block:: typoscript
+
+    lib.fluidContent {
+        templateRootPaths {
+            40 = EXT:my_ext/Resources/Private/Templates
+        }
+        partialRootPaths {
+            40 = EXT:my_ext/Resources/Private/Partials
+        }
+        layoutRootPaths {
+            40 = EXT:my_ext/Resources/Private/Layouts
+        }
+    }
+
+Editors Guide
+=============
+
+Add a news article
+------------------
+
+1. Go to the news sysfolder
+2. Create a news page below the sysfolder (the sorting is irrelevant as the news articles will be sorted by datetime in the listing)
+3. Title and datetime are mandatory fields
+4. You can add an image in resources tab and an abstract in metadata tab which will be shown in the listing
+5. You can add a sys_category to categorize the article
+6. To create content, just add content elements to this page
+7. You can set visibility settings as well as start- and endtime to either the news page or even the content elements
+
 
 Edit extension templates
 ------------------------
@@ -46,7 +80,7 @@ Frequently asked questions
 Is there a possibility to add content elements to an article?
 -------------------------------------------------------------
 As you are using a page as article you only have the possibility to use content elements.
-But think about the possibilities you have with the freedom of using any content element.
+But think about the possibilities you have with the freedom of using any content element (and even plugins).
 
 How can I use different layouts for an article?
 -----------------------------------------------
@@ -54,8 +88,8 @@ As you are using a page as article you are free to use every layout (e.g. backen
 
 Is there a configuration for RealURL?
 -------------------------------------
-You don't need a configuration as you are free to create a speaking url by your sysfolder and page structure.
-If you set the sysfolder named ``news`` below root page and add your articles into the sysfolder you will have the url
+You don't need a configuration as you are free to create a speaking url by your sys folder and page structure.
+If you set the sys folder named ``news`` below root page and add your articles into the sys folder you will have the url
 ``example.com/news/the-title-of-your-article``. And all without extra configuration. Cool, hm?
 
 I want to make a TYPO3 upgrade. Do I need to be careful?
@@ -64,3 +98,16 @@ As long as you are using ``fluid_styled_content``, you don't have to care of any
 The extension is using TYPO3 core features and don't need any extra tables, Extbase models or repositories.
 
 
+Contribute
+==========
+
+Feel free to contribute or test the extension!
+Here you can get in contact:
+
+* `GitLab project`_
+* `GitHub project (just a mirror)`_
+* `Slack channel`_
+
+.. _GitLab project: https://git.spooner.io/spooner/just_news
+.. _GitHub project (just a mirror): https://github.com/spoonerWeb/just_news
+.. _Slack channel: https://typo3.slack.com/messages/ext-just_news/
