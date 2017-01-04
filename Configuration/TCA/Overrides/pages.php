@@ -56,7 +56,7 @@ $GLOBALS['TCA']['pages']['types'][$newsDoktype]['showitem'] = str_replace(
 \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::registerPageTSConfigFile(
     'just_news',
     'Configuration/TypoScript/PageTS/news.ts',
-    'News pages (sysfolder)'
+    'News pages (sys folder)'
 );
 
 call_user_func(
