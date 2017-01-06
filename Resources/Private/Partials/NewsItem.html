@@ -6,6 +6,13 @@
 		</div>
 	</f:if>
 	<div class="content">
+		<f:if condition="{newsItem.newsCategories}">
+			<p>
+				<small>
+					<f:for each="{newsItem.newsCategories}" as="category" iteration="iterator">{category.data.title}<f:if condition="{iterator.isLast}"><f:else>, </f:else></f:if></f:for>
+				</small>
+			</p>
+		</f:if>
 		<h3>
 			<f:link.page pageUid="{newsItem.data.uid}">
 				{newsItem.data.title} ({newsItem.data.news_datetime -> f:format.date(format:'{settings.list.dateFormat}')})
