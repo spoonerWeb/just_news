@@ -21,7 +21,9 @@ tt_content {
                     20 = TYPO3\CMS\Frontend\DataProcessing\DatabaseQueryProcessor
                     20 {
                         table = sys_category
-                        pidInList = 10
+                        selectFields = sys_category.title
+                        pidInList.data = leveluid : 0
+                        recursive = 99
                         leftjoin = sys_category_record_mm ON sys_category_record_mm.uid_local = sys_category.uid
                         where.field = uid
                         where.wrap = sys_category_record_mm.uid_foreign = |
