@@ -32,7 +32,7 @@ $GLOBALS['TCA']['tt_content']['types']['news_list'] = [
     'showitem' => '
         --palette--;' . $frontendLanguageFilePrefix . 'palette.general;general,
         --palette--;' . $frontendLanguageFilePrefix . 'palette.header;header,
-        pages;' . $languageFilePrefix . 'CType.news_list.records,
+        pages;' . $languageFilePrefix . 'CType.news_list.records,recursive,
         --div--;' . $frontendLanguageFilePrefix . 'tabs.appearance,
         --palette--;' . $frontendLanguageFilePrefix . 'palette.frames;frames,
         --div--;' . $frontendLanguageFilePrefix . 'tabs.access,

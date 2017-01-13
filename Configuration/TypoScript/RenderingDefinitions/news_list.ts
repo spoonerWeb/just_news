@@ -7,6 +7,7 @@ tt_content {
             10 {
                 table = pages
                 pidInList.field = pages
+                recursive.field = recursive
                 selectFields = pages.*
                 where = NOT hidden AND doktype = 12
                 languageField = sys_language_uid
