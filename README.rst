@@ -92,6 +92,20 @@ I want to make a TYPO3 upgrade. Do I need to be careful?
 As long as you are using ``fluid_styled_content``, you don't have to care of anything when upgrading.
 The extension is using TYPO3 core features and don't need any extra tables, Extbase models or repositories.
 
+It is very confusing in the page tree if there are many articles.
+-----------------------------------------------------------------
+You can manage your articles in subfolders, e.g. the year of the article. So you have all 2016 articles in one folder and
+the 2017 articles in another folder. RealUrl will handle that by adding the year into the url like
+``example.com/news/2017/the-title-of-your-article``.
+If you have too many articles per year, you can add more subfolders as months. Or you use a type of category instead of the date.
+The good thing is, you are free to do what you want. It just works.
+
+Wish list
+=========
+
+1. Include a page browser
+1. Importer for tt_news and news
+
 
 Contribute
 ==========
