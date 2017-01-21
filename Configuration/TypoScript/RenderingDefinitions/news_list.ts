@@ -37,6 +37,12 @@ tt_content {
         settings {
             list {
                 dateFormat = d.m.Y
+                pageBrowser {
+                    enable = 1
+                    itemsPerPage = 20
+                    aboveList = 1
+                    belowList = 1
+                }
             }
         }
     }

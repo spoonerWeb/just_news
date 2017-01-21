@@ -1,12 +1,23 @@
-<html xmlns:f="http://xsd.helhum.io/ns/typo3/cms-fluid/master/ViewHelpers">
+<html xmlns:f="http://xsd.helhum.io/ns/typo3/cms-fluid/master/ViewHelpers" data-namespace-typo3-fluid="true">
 <div id="c{data.uid}">
+	<f:debug>{settings}</f:debug>
 	<f:render partial="Header" arguments="{_all}" />
 	<f:if condition="{news -> f:count()} > 0">
+		<f:if condition="{settings.list.pageBrowser.enable}">
+			<f:if condition="{settings.list.pageBrowser.aboveList}">
+				<f:render partial="PageBrowser" arguments="{_all}" />
+			</f:if>
+		</f:if>
 		<ol>
 			<f:for each="{news}" as="newsItem">
 				<f:render partial="NewsItem" arguments="{_all}" />
 			</f:for>
 		</ol>
+		<f:if condition="{settings.list.pageBrowser.enable}">
+			<f:if condition="{settings.list.pageBrowser.belowList}">
+				<f:render partial="PageBrowser" arguments="{_all}" />
+			</f:if>
+		</f:if>
 	</f:if>
 </div>
 </html>
