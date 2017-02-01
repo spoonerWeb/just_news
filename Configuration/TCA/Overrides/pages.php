@@ -12,6 +12,7 @@
  * The TYPO3 project - inspiring people to share!
  */
 
+$frontendPrefix = 'LLL:EXT:frontend/Resources/Private/Language/locallang_tca.xlf:';
 $languageFilePrefix = 'LLL:EXT:just_news/Resources/Private/Language/locallang_be.xlf:';
 $newsDoktype = 12;
 
@@ -33,8 +34,6 @@ $fields = [
     $fields
 );
 
-// Copy behaviour from standard page to news page
-$GLOBALS['TCA']['pages']['types'][$newsDoktype] = $GLOBALS['TCA']['pages']['types'][1];
 // Copy palette configuration from "title" to new "title_for_news"
 $GLOBALS['TCA']['pages']['palettes']['title_for_news'] = $GLOBALS['TCA']['pages']['palettes']['title'];
 
@@ -46,12 +45,29 @@ $GLOBALS['TCA']['pages']['palettes']['title_for_news'] = $GLOBALS['TCA']['pages'
     'after:title'
 );
 
-// Replace palette "title" with "title_for_news" in news page
-$GLOBALS['TCA']['pages']['types'][$newsDoktype]['showitem'] = str_replace(
-    ';title,',
-    ';title_for_news,',
-    $GLOBALS['TCA']['pages']['types'][$newsDoktype]['showitem']
-);
+// Copy behaviour from standard page to news page
+$GLOBALS['TCA']['pages']['types'][$newsDoktype]['showitem'] =
+    '--palette--;' . $frontendPrefix . 'pages.palettes.standard;standard,
+    --palette--;' . $frontendPrefix . 'pages.palettes.title;title_for_news,
+    categories,
+    --palette--;' . $frontendPrefix . 'pages.palettes.abstract;abstract,
+    --palette--;' . $frontendPrefix . 'pages.palettes.metatags;metatags,
+    --palette--;' . $frontendPrefix . 'pages.palettes.editorial;editorial,
+    --div--;' . $frontendPrefix . 'pages.tabs.resources,
+    --palette--;' . $frontendPrefix . 'pages.palettes.media;media,
+    --div--;' . $frontendPrefix . 'pages.tabs.appearance,
+    --palette--;' . $frontendPrefix . 'pages.palettes.layout;layout,
+    --palette--;' . $frontendPrefix . 'pages.palettes.replace;replace,
+    --div--;' . $frontendPrefix . 'pages.tabs.behaviour,
+    --palette--;' . $frontendPrefix . 'pages.palettes.links;links,
+    --palette--;' . $frontendPrefix . 'pages.palettes.caching;caching,
+    --palette--;' . $frontendPrefix . 'pages.palettes.language;language,
+    --palette--;' . $frontendPrefix . 'pages.palettes.miscellaneous;miscellaneous,
+    --palette--;' . $frontendPrefix . 'pages.palettes.module;module,
+    --div--;' . $frontendPrefix . 'pages.tabs.access,
+    --palette--;' . $frontendPrefix . 'pages.palettes.visibility;visibility,
+    --palette--;' . $frontendPrefix . 'pages.palettes.access;access'
+;
 
 \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::registerPageTSConfigFile(
     'just_news',
