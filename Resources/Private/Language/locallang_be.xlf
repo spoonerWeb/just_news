@@ -21,6 +21,9 @@
             <trans-unit id="wizard.description" xml:space="preserve">
                 <source>News list with possibility to filter for sysfolder and/or categories</source>
             </trans-unit>
+            <trans-unit id="constants.maxItems" xml:space="preserve">
+                <source>Maximum items in list (zero = all)</source>
+            </trans-unit>
         </body>
     </file>
 </xliff>
