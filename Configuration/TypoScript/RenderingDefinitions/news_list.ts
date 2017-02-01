@@ -9,6 +9,7 @@ tt_content {
                 pidInList.field = pages
                 recursive.field = recursive
                 selectFields = pages.*
+                max = {$plugin.tx_justnews.maxItems}
                 where = NOT hidden AND doktype = 12
                 languageField = sys_language_uid
                 orderBy = news_datetime DESC
