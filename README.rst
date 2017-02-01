@@ -55,6 +55,23 @@ To change the markup of the news listing you can add this code into TypoScript:
         }
     }
 
+Configuration
+=============
+
+.. container:: table-row
+
+   Property
+         maxItems
+
+   Data type
+         integer+
+
+   Description
+         The maximum news items appearing on the listing
+
+   Default
+         0 (means no limit)
+
 Editors Guide
 =============
 
