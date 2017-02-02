@@ -123,6 +123,12 @@ Wish list
 1. Include a page browser
 1. Importer for tt_news and news
 
+Donate
+======
+
+If you want to contribute by donation, feel free to send me some money via `paypal`_.
+
+.. _paypal: https://paypal.me/Tomalo
 
 Contribute
 ==========
