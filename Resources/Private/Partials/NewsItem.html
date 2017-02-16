@@ -21,7 +21,9 @@
 		<p>
 			<small><f:render partial="NewsMeta" arguments="{_all}" /></small><br>
 			{newsItem.data.abstract -> f:format.nl2br()}<br>
-			<f:link.page pageUid="{newsItem.data.uid}">Read more</f:link.page>
+			<f:link.page pageUid="{newsItem.data.uid}">
+				<f:translate key="read_more" />
+			</f:link.page>
 		</p>
 	</div>
 </li>
