@@ -42,3 +42,17 @@ tt_content {
         }
     }
 }
+
+[globalVar = GP:L>0]
+    tt_content {
+        news_list {
+            dataProcessing {
+                10 {
+                    selectFields = pages.*, pages_language_overlay.title
+                    leftjoin = pages_language_overlay ON pages_language_overlay.pid = pages.uid
+                    where = NOT pages.hidden AND pages.doktype = 12 AND NOT pages_language_overlay.hidden
+                }
+            }
+        }
+    }
+[global]
