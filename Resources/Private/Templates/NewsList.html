@@ -1,5 +1,6 @@
 <html xmlns:f="http://xsd.helhum.io/ns/typo3/cms-fluid/master/ViewHelpers">
 <div id="c{data.uid}">
+    <!--TYPO3SEARCH\_end-->
 	<f:render partial="Header" arguments="{_all}" />
 	<f:if condition="{news -> f:count()} > 0">
 		<ol>
@@ -8,5 +9,6 @@
 			</f:for>
 		</ol>
 	</f:if>
+    <!--TYPO3SEARCH\_start-->
 </div>
 </html>
