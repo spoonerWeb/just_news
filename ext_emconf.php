@@ -16,12 +16,12 @@ $EM_CONF[$_EXTKEY] = [
     'title' => 'Just News - easy like bicycling',
     'description' => 'A news system used with core features. Easy to use, easy to extend.',
     'category' => 'fe',
-    'version' => '0.1.2',
+    'version' => '0.1.3-dev',
     'state' => 'stable',
     'author' => 'Thomas Löffler',
     'constraints' => [
         'depends' => [
-            'typo3' => '7.6.0-8.7.99',
+            'typo3' => '7.6.0-9.4.99',
             'fluid_styled_content' => ''
         ],
         'conflicts' => [],
