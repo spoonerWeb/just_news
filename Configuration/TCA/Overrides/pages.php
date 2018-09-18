@@ -16,43 +16,32 @@ $frontendPrefix = 'LLL:EXT:frontend/Resources/Private/Language/locallang_tca.xlf
 $languageFilePrefix = 'LLL:EXT:just_news/Resources/Private/Language/locallang_be.xlf:';
 $newsDoktype = 12;
 
-$fields = [
-    'news_datetime' => [
-        'exclude' => 0,
-        'label' => $languageFilePrefix . 'pages.news_datetime',
-        'config' => [
-            'type' => 'input',
-            'size' => 13,
-            'eval' => 'datetime,required',
-            'default' => 0,
-        ],
-    ],
-];
-
-\TYPO3\CMS\Core\Utility\ExtensionManagementUtility::addTCAcolumns(
-    'pages',
-    $fields
-);
-
 // Copy palette configuration from "title" to new "title_for_news"
-$GLOBALS['TCA']['pages']['palettes']['title_for_news'] = $GLOBALS['TCA']['pages']['palettes']['title'];
+$GLOBALS['TCA']['pages']['palettes']['title_news'] = $GLOBALS['TCA']['pages']['palettes']['title'];
+
+// Copy palette configuration from "editorial" to new "editorial_for_news"
+// Remove lastUpdate from palette
+$GLOBALS['TCA']['pages']['palettes']['editorial_news'] = \TYPO3\CMS\Core\Utility\GeneralUtility::rmFromList(
+    'lastUpdated;LLL:EXT:frontend/Resources/Private/Language/locallang_tca.xlf:pages.lastUpdated_formlabel',
+    $GLOBALS['TCA']['pages']['palettes']['editorial']
+);
 
 // Add news_datetime to title_for_news palette
 \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::addFieldsToPalette(
     'pages',
-    'title_for_news',
-    'news_datetime',
+    'title_news',
+    'lastUpdated;LLL:EXT:just_news/Resources/Private/Language/locallang_be.xlf:pages.lastUpdated',
     'after:title'
 );
 
 // Copy behaviour from standard page to news page
 $GLOBALS['TCA']['pages']['types'][$newsDoktype]['showitem'] =
     '--palette--;' . $frontendPrefix . 'pages.palettes.standard;standard,
-    --palette--;' . $frontendPrefix . 'pages.palettes.title;title_for_news,
+    --palette--;' . $frontendPrefix . 'pages.palettes.title;title_news,
     categories,
     --palette--;' . $frontendPrefix . 'pages.palettes.abstract;abstract,
     --palette--;' . $frontendPrefix . 'pages.palettes.metatags;metatags,
-    --palette--;' . $frontendPrefix . 'pages.palettes.editorial;editorial,
+    --palette--;' . $frontendPrefix . 'pages.palettes.editorial;editorial_news,
     --div--;' . $frontendPrefix . 'pages.tabs.resources,
     --palette--;' . $frontendPrefix . 'pages.palettes.media;media,
     --div--;' . $frontendPrefix . 'pages.tabs.appearance,
