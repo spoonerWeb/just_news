@@ -15,14 +15,14 @@
 		</f:if>
 		<h3>
 			<f:link.page pageUid="{newsItem.data.uid}">
-				{newsItem.data.title} ({newsItem.data.news_datetime -> f:format.date(format:'{settings.list.dateFormat}')})
+				{newsItem.data.title} ({newsItem.data.lastUpdated -> f:format.date(format:'{settings.list.dateFormat}')})
 			</f:link.page>
 		</h3>
 		<p>
 			<small><f:render partial="NewsMeta" arguments="{_all}" /></small><br>
 			{newsItem.data.abstract -> f:format.nl2br()}<br>
 			<f:link.page pageUid="{newsItem.data.uid}">
-				<f:translate key="read_more" />
+				<f:translate key="LLL:EXT:just_news/Resources/Private/Language/locallang.xlf:read_more" />
 			</f:link.page>
 		</p>
 	</div>

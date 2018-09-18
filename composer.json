@@ -1,11 +1,13 @@
 {
   "name": "spooner-web/just_news",
   "type": "typo3-cms-extension",
-  "description": "Easy and lightweight news extension.",
-  "homepage": "https://typo3.org",
-  "license": [
-    "GPL-2.0+"
-  ],
+  "description": "Easy, flexible and lightweight news extension. No extra tables needed, using pages for news articles.",
+  "homepage": "https://git.spooner.io/spooner/just_news",
+  "license": "GPL-2.0+",
+  "support": {
+    "issues": "https://git.spooner.io/spooner/just_news/issues",
+    "source": "https://git.spooner.io/spooner/just_news"
+  },
   "keywords": [
     "TYPO3",
     "extension",
@@ -22,7 +24,7 @@
     }
   ],
   "require": {
-    "typo3/cms-core": "^7.6 || ^8.7",
+    "typo3/cms-core": "^9.4",
     "typo3/cms-fluid-styled-content": "*"
   },
   "config": {
@@ -32,7 +34,8 @@
   "extra": {
     "typo3/cms": {
       "cms-package-dir": "{$vendor-dir}/typo3/cms",
-      "web-dir": ".Build/Web"
+      "web-dir": ".Build/Web",
+      "extension-key": "just_news"
     }
   }
 }

@@ -6,14 +6,14 @@
             <trans-unit id="news_page_type" xml:space="preserve">
                 <source>News page</source>
             </trans-unit>
-            <trans-unit id="pages.news_datetime" xml:space="preserve">
+            <trans-unit id="pages.lastUpdated" xml:space="preserve">
                 <source>News datetime</source>
             </trans-unit>
             <trans-unit id="CType.news_list" xml:space="preserve">
                 <source>News listing</source>
             </trans-unit>
-            <trans-unit id="CType.news_list.records" xml:space="preserve">
-                <source>Pages with news sub elements</source>
+            <trans-unit id="CType.NewsList.flexform_pi" xml:space="preserve">
+                <source>News Options</source>
             </trans-unit>
             <trans-unit id="wizard.title" xml:space="preserve">
                 <source>News listing (just_news)</source>
@@ -23,6 +23,12 @@
             </trans-unit>
             <trans-unit id="constants.maxItems" xml:space="preserve">
                 <source>Maximum items in list (zero = all)</source>
+            </trans-unit>
+            <trans-unit id="flexform.recursive.inherit" xml:space="preserve">
+                <source>Defined in TypoScript</source>
+            </trans-unit>
+            <trans-unit id="flexform.maxItems" xml:space="preserve">
+                <source>Maximum items to display (0 = all)</source>
             </trans-unit>
         </body>
     </file>
