@@ -58,10 +58,40 @@ To change the markup of the news listing you can add this code into TypoScript:
 Configuration
 =============
 
+Configuration is done via FlexForm in the news list content element.
+
 .. container:: table-row
 
    Property
-         maxItems
+         settings.startingpoint
+
+   Data type
+         integer+
+
+   Description
+         The page UIDs with news pages below
+
+   Default
+         -
+
+.. container:: table-row
+
+   Property
+         settings.recursive
+
+   Data type
+         integer+
+
+   Description
+         The recursive levels to look for news pages
+
+   Default
+         0 (one level below)
+
+.. container:: table-row
+
+   Property
+         settings.maxItems
 
    Data type
          integer+
