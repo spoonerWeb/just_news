@@ -5,9 +5,7 @@ cache:
     - cache/
 
 stages:
-  - build
   - upload
-
 
 # TER Upload when tagging in master branch
 # The variables T3O_USERNAME and T3O_PASSWORD should be set in GitLab
