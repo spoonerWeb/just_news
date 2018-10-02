@@ -59,48 +59,7 @@ Configuration
 =============
 
 Configuration is done via FlexForm in the news list content element.
-
-.. container:: table-row
-
-   Property
-         settings.startingpoint
-
-   Data type
-         integer+
-
-   Description
-         The page UIDs with news pages below
-
-   Default
-         -
-
-.. container:: table-row
-
-   Property
-         settings.recursive
-
-   Data type
-         integer+
-
-   Description
-         The recursive levels to look for news pages
-
-   Default
-         0 (one level below)
-
-.. container:: table-row
-
-   Property
-         settings.maxItems
-
-   Data type
-         integer+
-
-   Description
-         The maximum news items appearing on the listing
-
-   Default
-         0 (means no limit)
+It contains the settings for maximum items, starting point and recursion level.
 
 Editors Guide
 =============
@@ -134,6 +93,10 @@ You don't need a configuration as you are free to create a speaking url by your 
 If you set the sys folder named ``news`` below root page and add your articles into the sys folder you will have the url
 ``example.com/news/the-title-of-your-article``. And all without extra configuration. Cool, hm?
 
+Is there something I need to know for using slugs in v9?
+--------------------------------------------------------
+No. Just use it like on your other pages.
+
 I want to make a TYPO3 upgrade. Do I need to be careful?
 --------------------------------------------------------
 As long as you are using ``fluid_styled_content``, you don't have to care of anything when upgrading.
@@ -152,6 +115,19 @@ Wish list
 
 1. Include a page browser
 1. Importer for tt_news and news
+
+Migration
+=========
+
+From version 0.1.x to 1.x
+-------------------------
+
+Due to the change of the DB field for the datetime and the change of the plugin name, you need to to these two SQL queries:
+
+.. code-block:: sql
+
+    UPDATE pages SET lastUpdated = news_datetime;
+    UPDATE tt_content SET CType = "NewsList" WHERE CType = "news_list";
 
 Donate
 ======
