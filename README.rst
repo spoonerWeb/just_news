@@ -35,15 +35,15 @@ Integrate extension
 Enhancing extension
 -------------------
 
-By adding template, partial and layout paths to ``lib.fluidContent`` with their
+By adding template, partial and layout paths to ``lib.contentElement`` with their
 subsections ``templateRootPaths``, ``partialRootPaths`` and ``layoutRootPaths`` you can
 create own templates and override the original ones.
 
-To change the markup of the news listing you can add this code into TypoScript:
+To change the markup of the news listing you can add this code into TypoScript setup:
 
 .. code-block:: typoscript
 
-    lib.fluidContent {
+    lib.contentElement {
         templateRootPaths {
             40 = EXT:my_ext/Resources/Private/Templates
         }
