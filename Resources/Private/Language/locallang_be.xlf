@@ -30,6 +30,9 @@
             <trans-unit id="flexform.maxItems" xml:space="preserve">
                 <source>Maximum items to display (0 = all)</source>
             </trans-unit>
+            <trans-unit id="flexform.categoryRestriction" xml:space="preserve">
+                <source>Restrict to categories (OR)</source>
+            </trans-unit>
         </body>
     </file>
 </xliff>

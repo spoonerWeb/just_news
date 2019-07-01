@@ -10,9 +10,19 @@ tt_content {
                 recursive.data = flexform:pi_flexform:settings.recursive
                 selectFields = pages.*
                 max.data = flexform:pi_flexform:settings.maxItems
-                where = NOT hidden AND doktype = 12
+                join = sys_category_record_mm ON sys_category_record_mm.uid_foreign = pages.uid
+                where.cObject = COA
+                where.cObject {
+                    10 = TEXT
+                    10.value = NOT pages.hidden AND pages.doktype = 12
+                    20 = TEXT
+                    20.noTrimWrap = | AND sys_category_record_mm.uid_local IN (|)|
+                    20.data = flexform:pi_flexform:settings.categoryRestriction
+                    20.required = 1
+                }
                 languageField = sys_language_uid
                 orderBy = lastUpdated DESC
+                groupBy = pages.uid
                 as = news
                 dataProcessing {
                     10 = TYPO3\CMS\Frontend\DataProcessing\FilesProcessor
