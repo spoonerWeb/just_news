@@ -47,7 +47,7 @@ $boot = function ($packageKey) {
 
     // Adds page TypoScript for the news list content element
     TYPO3\CMS\Core\Utility\ExtensionManagementUtility::addPageTSConfig(
-        '<INCLUDE_TYPOSCRIPT: source="FILE:EXT:just_news/Configuration/TypoScript/PageTS/NewsList" extensions="typoscript">'
+        '@import \'EXT:just_news/Configuration/PageTS/NewsList.tsconfig\''
     );
 };
 
