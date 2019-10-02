@@ -51,5 +51,5 @@ $boot = function ($packageKey) {
     );
 };
 
-$boot($_EXTKEY);
+$boot('just_news');
 unset($boot);
