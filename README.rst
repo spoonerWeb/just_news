@@ -27,10 +27,27 @@ Integrate extension
 -------------------
 
 1. Include static template
-2. Create a sys folder
-3. Edit the page properties and add PageTS ``News pages (sys folder)`` to make sure only news pages (or sys folders) will be created below
+2. Select a page to add news pages as children
+3. [optional] Edit the page properties and add PageTS ``Restrict to news pages`` to make sure only news pages (or sys folders) will be created below
 4. Create a content element and switch to ``News listing``
-5. Add the sys folder to ``Pages with news sub elements``
+5. Add the parent page(s) of the news pages you want to list to ``Pages with news sub elements``
+6. [optional] Change recursive level if more than 1 (default)
+6. [optional] Change other settings
+
+Pagination
+----------
+
+If you want to have pagination, use the configuration in TypoScript to activate and setup:
+
+.. code-block:: typoscript
+
+    # Activate pagination
+    tt_content.NewsList.settings.paginate.activate = 1
+
+    # Setup pagination
+    tt_content.NewsList.settings.paginate.itemsPerPage = 5
+    tt_content.NewsList.settings.paginate.insertAbove = 0
+    tt_content.NewsList.settings.paginate.insertBelow = 1
 
 Enhancing extension
 -------------------
@@ -67,11 +84,11 @@ Editors Guide
 Add a news article
 ------------------
 
-1. Go to the news sys folder
-2. Create a news page below the sys folder (the sorting is irrelevant as the news articles will be sorted by datetime in the listing)
+1. Go to the parent page the news pages are children of
+2. Create a news page below this page (the sorting is irrelevant as the news articles will be sorted by datetime in the listing)
 3. Title and datetime are mandatory fields
 4. You can add an image in resources tab and an abstract in main tab which will be shown in the listing
-5. You can add a sys_category to categorize the article
+5. You can add a category to categorize the article
 6. To create content, just add content elements to this page
 7. You can set visibility settings as well as start- and endtime to either the news page or even the content elements
 
