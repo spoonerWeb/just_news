@@ -1,6 +1,12 @@
 tt_content {
     NewsList =< lib.contentElement
     NewsList {
+        extbase {
+            controllerName = JustNews
+            controllerActionName = list
+            controllerExtensionName = JustNews
+            pluginName = NewsList
+        }
         templateName = NewsList
         dataProcessing {
             10 = TYPO3\CMS\Frontend\DataProcessing\DatabaseQueryProcessor
@@ -47,6 +53,12 @@ tt_content {
             }
         }
         settings {
+            paginate {
+                activate = 0
+                itemsPerPage = 5
+                insertAbove = 0
+                insertBelow = 1
+            }
             list {
                 dateFormat = d.m.Y
             }
