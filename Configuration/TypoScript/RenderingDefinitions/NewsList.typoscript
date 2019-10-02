@@ -38,7 +38,7 @@ tt_content {
                         recursive = 99
                         leftjoin = sys_category_record_mm ON sys_category_record_mm.uid_local = sys_category.uid
                         where.field = uid
-                        where.wrap = sys_category_record_mm.uid_foreign = |
+                        where.wrap = sys_category_record_mm.tablenames='pages' AND sys_category_record_mm.uid_foreign = |
                         begin = 0
                         as = newsCategories
                     }
