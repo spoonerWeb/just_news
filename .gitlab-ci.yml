@@ -20,6 +20,7 @@ ter-upload:
     - composer install
     - composer require namelesscoder/typo3-repository-client
     - export TYPO3_PATH_WEB="$PWD/.Build/Web"
+    - echo $CI_COMMIT_TAG
     - >
       if [ -n "$CI_COMMIT_TAG" ] && [ -n "$T3O_USERNAME" ] && [ -n "$T3O_PASSWORD" ]; then
         echo -e "Preparing upload of release ${CI_COMMIT_TAG} to TER\n"
