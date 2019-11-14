@@ -17,7 +17,6 @@ tt_content {
                 selectFields = pages.*
                 max.data = flexform:pi_flexform:settings.maxItems
                 join = sys_category_record_mm ON sys_category_record_mm.uid_foreign = pages.uid
-                join.if.isTrue.data = flexform:pi_flexform:settings.categoryRestriction
                 where.cObject = COA
                 where.cObject {
                     10 = TEXT
