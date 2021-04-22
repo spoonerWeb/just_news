@@ -1,32 +1,52 @@
+include:
+  - remote: 'https://git.spooner.io/ci-templates/gitlab-anybadge-creator/-/raw/main/anybadges.yml'
+  - remote: 'https://git.spooner.io/ci-templates/composer-packages/-/raw/main/composer-packages.yml'
+
 cache:
-  key: "$CI_BUILD_NAME-$CI_BUILD_REF_NAME"
+  key: ${CI_COMMIT_REF_SLUG}
   untracked: true
   paths:
-    - cache/
+    - vendor/
 
 stages:
-  - upload
+  - test
+  - badges
+  - release
+
+"TypoScript Linter":
+  stage: test
+  image: composer:2.0.7
+  variables:
+    GIT_STRATEGY: "clone"
+  before_script:
+    - composer global require helmich/typo3-typoscript-lint --update-with-all-dependencies
+  script:
+    - /tmp/vendor/bin/typoscript-lint -c typoscript-lint.yml --fail-on-warnings
+
+"Create Badge":
+  stage: badges
+  script:
+    - latest_version=$(git describe --abbrev=0)
+    - anybadge -l "Latest Version" -v $latest_version -f latestVersion.svg -c blue
 
 # TER Upload when tagging in master branch
-# The variables T3O_USERNAME and T3O_PASSWORD should be set in GitLab
-ter-upload:
-  stage: upload
+# The variables TYPO3_API_TOKEN and TYPO3_EXTENSION_KEY must be set in GitLab
+"Upload to TER":
+  stage: release
+  image: composer:2.0.7
   only:
     - tags
   before_script:
-    - curl -sS https://getcomposer.org/installer | php -- --install-dir=/usr/local/bin --filename=composer
-    - export COMPOSER_CACHE_DIR=/cache/composer
+    - composer global require typo3/tailor
   script:
-    - composer install
-    - composer require namelesscoder/typo3-repository-client
-    - export TYPO3_PATH_WEB="$PWD/.Build/Web"
     - >
-      if [ -n "$CI_COMMIT_TAG" ] && [ -n "$T3O_USERNAME" ] && [ -n "$T3O_PASSWORD" ]; then
+      if [ -n "$CI_COMMIT_TAG" ] && [ -n "$TYPO3_API_TOKEN" ] && [ -n "$TYPO3_EXTENSION_KEY" ]; then
         echo -e "Preparing upload of release ${CI_COMMIT_TAG} to TER\n"
         # Cleanup before we upload
         git reset --hard HEAD && git clean -fx
         # Upload
         TAG_MESSAGE=`git tag -n10 -l $CI_COMMIT_TAG | sed 's/^[0-9.]*[ ]*//g'`
         echo "Uploading release ${CI_COMMIT_TAG} to TER"
-        .Build/bin/upload . "$T3O_USERNAME" "$T3O_PASSWORD" "$TAG_MESSAGE"
+        /tmp/vendor/bin/tailor ter:publish --comment "$TAG_MESSAGE" "$CI_COMMIT_TAG" "$TYPO3_EXTENSION_KEY"
       fi;
+
