@@ -11,6 +11,7 @@ cache:
 stages:
   - test
   - badges
+  - packages
   - release
 
 "TypoScript Linter":
