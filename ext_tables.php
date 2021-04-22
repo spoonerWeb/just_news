@@ -15,12 +15,6 @@
 defined('TYPO3_MODE') || die ('Access denied.');
 
 $boot = function ($packageKey) {
-    TYPO3\CMS\Core\Utility\ExtensionManagementUtility::addStaticFile(
-        $packageKey,
-        'Configuration/TypoScript/',
-        'News with TypoScript'
-    );
-
     $newsDokType = 12;
 
     // Add new page type:
