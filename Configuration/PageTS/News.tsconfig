@@ -1,5 +1,5 @@
 TCEFORM.pages {
-    doktype {
-        keepItems = 12
-    }
+  doktype {
+    keepItems = 12
+  }
 }

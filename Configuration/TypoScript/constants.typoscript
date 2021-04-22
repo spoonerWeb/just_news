@@ -1,5 +1,5 @@
 # customcategory=newslist=LLL:EXT:just_news/Resources/Private/Language/locallang_be.xlf:CType.news_list
 plugin.tx_justnews {
-    # cat=newslist//a; type=int+; label=LLL:EXT:just_news/Resources/Private/Language/locallang_be.xlf:constants.maxItems
-    maxItems = 0
+  # cat=newslist//a; type=int+; label=LLL:EXT:just_news/Resources/Private/Language/locallang_be.xlf:constants.maxItems
+  maxItems = 0
 }
