@@ -17,9 +17,11 @@ tt_content {
           10 = TEXT
           10.value = NOT pages.hidden AND pages.doktype = 12
           20 = TEXT
-          20.noTrimWrap = | AND sys_category_record_mm.uid_local IN (|)|
-          20.data = flexform:pi_flexform:settings.categoryRestriction
-          20.required = 1
+          20 {
+            noTrimWrap = | AND sys_category_record_mm.uid_local IN (|)|
+            data = flexform:pi_flexform:settings.categoryRestriction
+            required = 1
+          }
         }
 
         languageField = sys_language_uid
@@ -40,8 +42,10 @@ tt_content {
             pidInList.data = leveluid : 0
             recursive = 99
             leftjoin = sys_category_record_mm ON sys_category_record_mm.uid_local = sys_category.uid
-            where.field = uid
-            where.wrap = sys_category_record_mm.tablenames='pages' AND sys_category_record_mm.uid_foreign = |
+            where {
+              field = uid
+              wrap = sys_category_record_mm.tablenames='pages' AND sys_category_record_mm.uid_foreign = |
+            }
             begin = 0
             as = newsCategories
           }
