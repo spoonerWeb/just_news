@@ -1,2 +1,6 @@
-.idea
+/.idea
+/.Build
+/config
+/var
+composer.lock
 
