@@ -25,6 +25,8 @@ $EM_CONF[$_EXTKEY] = [
             'fluid_styled_content' => ''
         ],
         'conflicts' => [],
-        'suggests' => []
+        'suggests' => [
+            'paginated_processor'
+        ]
     ]
 ];
