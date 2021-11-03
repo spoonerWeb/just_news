@@ -24,13 +24,13 @@
     }
   ],
   "require": {
-    "typo3/cms-core": "^9.5 || ^10.4 || ^11.4",
-    "typo3/cms-fluid-styled-content": "^9.5 || ^10.4 || ^11.4"
+    "typo3/cms-core": "^9.5 || ^10.4 || ^11.5",
+    "typo3/cms-fluid-styled-content": "^9.5 || ^10.4 || ^11.5"
   },
   "require-dev": {
-    "typo3/cms-filelist": "^9.5 || ^10.4 || ^11.4",
-    "typo3/cms-install": "^9.5 || ^10.4 || ^11.4",
-    "typo3/cms-tstemplate": "^9.5 || ^10.4 || ^11.4",
+    "typo3/cms-filelist": "^9.5 || ^10.4 || ^11.5",
+    "typo3/cms-install": "^9.5 || ^10.4 || ^11.5",
+    "typo3/cms-tstemplate": "^9.5 || ^10.4 || ^11.5",
     "typo3/testing-framework": "^6.11",
     "helhum/typo3-console": "^5.0 || ^6.0 || ^7.0"
   },
