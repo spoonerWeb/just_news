@@ -17,10 +17,16 @@
     $newsDokType = 12;
     $table = 'pages';
 
-// Copy palette configuration from "title" to new "title_for_news"
+    // Add new page type:
+    $GLOBALS['PAGES_TYPES'][$newsDokType] = [
+        'type' => 'web',
+        'allowedTables' => '*',
+    ];
+
+    // Copy palette configuration from "title" to new "title_for_news"
     $GLOBALS['TCA']['pages']['palettes']['title_news'] = $GLOBALS['TCA']['pages']['palettes']['title'];
 
-// Add news_datetime to title_for_news palette
+    // Add news_datetime to title_for_news palette
     \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::addFieldsToPalette(
         'pages',
         'title_news',
@@ -28,8 +34,8 @@
         'after:title'
     );
 
-// Copy palette configuration from "editorial" to new "editorial_for_news"
-// Remove lastUpdate from palette
+    // Copy palette configuration from "editorial" to new "editorial_for_news"
+    // Remove lastUpdate from palette
     $GLOBALS['TCA']['pages']['palettes']['editorial_news'] = $GLOBALS['TCA']['pages']['palettes']['editorial'];
     $GLOBALS['TCA']['pages']['palettes']['editorial_news']['showitem'] = str_replace(
         ', lastUpdated;LLL:EXT:frontend/Resources/Private/Language/locallang_tca.xlf:pages.lastUpdated_formlabel',
@@ -37,15 +43,17 @@
         $GLOBALS['TCA']['pages']['palettes']['editorial_news']['showitem']
     );
 
-// Copy behaviour from standard page to news page
+    // Copy behaviour from standard page to news page
     $GLOBALS['TCA']['pages']['types'][$newsDokType]['showitem'] = $GLOBALS['TCA']['pages']['types'][1]['showitem'];
-// Replace title area and add categories
+
+    // Replace title area and add categories
     $GLOBALS['TCA']['pages']['types'][$newsDokType]['showitem'] = str_replace(
         ';title,',
         ';title_news,',
         $GLOBALS['TCA']['pages']['types'][$newsDokType]['showitem']
     );
-// Replace editorial to remove lastUpdated
+
+    // Replace editorial to remove lastUpdated
     $GLOBALS['TCA']['pages']['types'][$newsDokType]['showitem'] = str_replace(
         ';editorial,',
         ';editorial_news,',

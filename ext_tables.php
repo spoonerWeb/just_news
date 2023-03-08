@@ -13,21 +13,3 @@
  */
 
 defined('TYPO3_MODE') || die ('Access denied.');
-
-$boot = function ($packageKey) {
-    $newsDokType = 12;
-
-    // Add new page type:
-    $GLOBALS['PAGES_TYPES'][$newsDokType] = [
-        'type' => 'web',
-        'allowedTables' => '*',
-    ];
-
-
-
-
-
-};
-
-$boot('just_news');
-unset($boot);
