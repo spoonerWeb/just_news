@@ -12,7 +12,6 @@
  * The TYPO3 project - inspiring people to share!
  */
 
-$frontendPrefix = 'LLL:EXT:frontend/Resources/Private/Language/locallang_tca.xlf:';
 $languageFilePrefix = 'LLL:EXT:just_news/Resources/Private/Language/locallang_be.xlf:';
 $newsDoktype = 12;
 
