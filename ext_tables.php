@@ -34,15 +34,7 @@ $boot = function ($packageKey) {
         );
 
 
-    // Allow backend users to drag and drop the new page type:
-    TYPO3\CMS\Core\Utility\ExtensionManagementUtility::addUserTSConfig(
-        'options.pageTree.doktypesToShowInNewPageDragArea := addToList(' . $newsDokType . ')'
-    );
 
-    // Adds page TypoScript for the news list content element
-    TYPO3\CMS\Core\Utility\ExtensionManagementUtility::addPageTSConfig(
-        '@import \'EXT:just_news/Configuration/PageTS/NewsList.tsconfig\''
-    );
 };
 
 $boot('just_news');
