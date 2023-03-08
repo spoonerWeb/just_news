@@ -53,7 +53,7 @@ $GLOBALS['TCA']['pages']['types'][$newsDoktype]['showitem'] = str_replace(
 
 \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::registerPageTSConfigFile(
     'just_news',
-    'Configuration/TypoScript/PageTS/News.tsconfig',
+    'Configuration/TsConfig/Page/News.tsconfig',
     'Restrict to news pages'
 );
 
