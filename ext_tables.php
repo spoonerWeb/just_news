@@ -14,7 +14,7 @@
 
 defined('TYPO3_MODE') || die ('Access denied.');
 
-$boot = function ($packageKey) {
+(static function(): void {
     $newsDokType = 12;
 
     // Add new page type:
@@ -22,28 +22,4 @@ $boot = function ($packageKey) {
         'type' => 'web',
         'allowedTables' => '*',
     ];
-
-    // Provide icon for page tree, list view, ... :
-    \TYPO3\CMS\Core\Utility\GeneralUtility::makeInstance(\TYPO3\CMS\Core\Imaging\IconRegistry::class)
-        ->registerIcon(
-            'apps-pagetree-justnews',
-            TYPO3\CMS\Core\Imaging\IconProvider\SvgIconProvider::class,
-            [
-                'source' => 'EXT:' . $packageKey . '/Resources/Public/Icons/NewsArticle.svg',
-            ]
-        );
-
-
-    // Allow backend users to drag and drop the new page type:
-    TYPO3\CMS\Core\Utility\ExtensionManagementUtility::addUserTSConfig(
-        'options.pageTree.doktypesToShowInNewPageDragArea := addToList(' . $newsDokType . ')'
-    );
-
-    // Adds page TypoScript for the news list content element
-    TYPO3\CMS\Core\Utility\ExtensionManagementUtility::addPageTSConfig(
-        '@import \'EXT:just_news/Configuration/PageTS/NewsList.tsconfig\''
-    );
-};
-
-$boot('just_news');
-unset($boot);
+})();
