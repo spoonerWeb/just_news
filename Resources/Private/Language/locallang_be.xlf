@@ -33,6 +33,9 @@
             <trans-unit id="flexform.categoryRestriction" xml:space="preserve">
                 <source>Restrict to categories (OR)</source>
             </trans-unit>
+            <trans-unit id="div.news" xml:space="preserve">
+                <source>Just News Settings</source>
+            </trans-unit>
         </body>
     </file>
 </xliff>

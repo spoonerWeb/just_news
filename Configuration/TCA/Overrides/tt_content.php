@@ -20,7 +20,8 @@
         'showitem' => '
         --palette--;' . $frontendLanguageFilePrefix . 'palette.general;general,
         --palette--;' . $frontendLanguageFilePrefix . 'palette.header;header,
-        pi_flexform;LLL:EXT:just_news/Resources/Private/Language/locallang_be.xlf:CType.NewsList.flexform_pi,
+        --div--;' . $languageFilePrefix . 'div.news,
+        pi_flexform;' . $languageFilePrefix . 'CType.NewsList.flexform_pi,
         --div--;' . $frontendLanguageFilePrefix . 'tabs.appearance,
         --palette--;' . $frontendLanguageFilePrefix . 'palette.frames;frames,
         --div--;' . $frontendLanguageFilePrefix . 'tabs.access,
