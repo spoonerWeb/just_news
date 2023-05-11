@@ -36,6 +36,12 @@
             <trans-unit id="div.news" xml:space="preserve">
                 <source>Just News Settings</source>
             </trans-unit>
+            <trans-unit id="wizard.title" xml:space="preserve">
+                <source>Just News Listing</source>
+            </trans-unit>
+            <trans-unit id="wizard.description" xml:space="preserve">
+                <source>List news articles with the possibility to filter by categories and page tree</source>
+            </trans-unit>
         </body>
     </file>
 </xliff>
