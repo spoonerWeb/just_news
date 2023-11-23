@@ -25,6 +25,6 @@ defined('TYPO3_MODE') || defined('TYPO3') || die ('Access denied.');
 
     \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::addPageTSConfig(
         '@import "EXT:just_news/Configuration/TsConfig/mod/Wizard.tsconfig"' . LF .
-        '<INCLUDE_TYPOSCRIPT: source="FILE:just_news/Configuration/TsConfig/mod/Wizard.tsconfig">'
+        '<INCLUDE_TYPOSCRIPT: source="FILE:EXT:just_news/Configuration/TsConfig/mod/Wizard.tsconfig">'
     );
 })();
