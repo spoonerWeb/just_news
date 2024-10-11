@@ -11,7 +11,7 @@ defined('TYPO3_MODE') || defined('TYPO3') || die('Access denied.');
 
     // Adds page TypoScript for the news list content element
     TYPO3\CMS\Core\Utility\ExtensionManagementUtility::addPageTSConfig(
-        '@import \'EXT:just_news/Configuration/PageTS/NewsList.tsconfig\''
+        '@import \'EXT:just_news/Configuration/TsConfig/Page/NewsList.tsconfig\''
     );
 
     // Provide icon for page tree, list view, ... :
