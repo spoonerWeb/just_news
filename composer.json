@@ -24,15 +24,15 @@
     }
   ],
   "require": {
-    "typo3/cms-core": "^9.5 || ^10.4 || ^11.5 || ^12.4",
-    "typo3/cms-fluid-styled-content": "^9.5 || ^10.4 || ^11.5 || ^12.4"
+    "typo3/minimal": "^13.4",
+    "typo3/cms-core": "^13.4",
+    "typo3/cms-fluid-styled-content": "^13.4"
   },
   "require-dev": {
-    "typo3/cms-filelist": "^9.5 || ^10.4 || ^11.5 || ^12.4",
-    "typo3/cms-install": "^9.5 || ^10.4 || ^11.5 || ^12.4",
-    "typo3/cms-tstemplate": "^9.5 || ^10.4 || ^11.5 || ^12.4",
-    "typo3/testing-framework": "^6.11 || ^7.0",
-    "helhum/typo3-console": "^5.0 || ^6.0 || ^7.0 || ^8.0"
+    "typo3/cms-filelist": "^13.4",
+    "typo3/cms-install": "^13.4",
+    "typo3/cms-tstemplate": "^13.4",
+    "typo3/cms-lowlevel": "^13.4"
   },
   "suggest": {
     "spooner-web/paginated-processor": "Adds pagination for list view"

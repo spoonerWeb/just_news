@@ -16,7 +16,7 @@ stages:
 
 "TypoScript Linter":
   stage: test
-  image: composer:2.0.7
+  image: composer:2
   variables:
     GIT_STRATEGY: "clone"
   before_script:
@@ -34,7 +34,7 @@ stages:
 # The variables TYPO3_API_TOKEN and TYPO3_EXTENSION_KEY must be set in GitLab
 "Upload to TER":
   stage: release
-  image: composer:2.0.7
+  image: composer:2
   only:
     - tags
   before_script:

@@ -1,33 +1,37 @@
 <?php
 
+use TYPO3\CMS\Core\Imaging\IconProvider\SvgIconProvider;
+use TYPO3\CMS\Core\Imaging\IconRegistry;
+use TYPO3\CMS\Core\Utility\ExtensionManagementUtility;
+use TYPO3\CMS\Core\Utility\GeneralUtility;
+use TYPO3\CMS\Extbase\Utility\ExtensionUtility;
+
 defined('TYPO3_MODE') || defined('TYPO3') || die('Access denied.');
 
-(static function (): void {
-    $newsDokType = 12;
-    // Allow backend users to drag and drop the new page type:
-    TYPO3\CMS\Core\Utility\ExtensionManagementUtility::addUserTSConfig(
-        'options.pageTree.doktypesToShowInNewPageDragArea := addToList(' . $newsDokType . ')'
-    );
+$newsDokType = 12;
+// Allow backend users to drag and drop the new page type:
+ExtensionManagementUtility::addUserTSConfig(
+    'options.pageTree.doktypesToShowInNewPageDragArea := addToList(' . $newsDokType . ')'
+);
 
-    // Adds page TypoScript for the news list content element
-    TYPO3\CMS\Core\Utility\ExtensionManagementUtility::addPageTSConfig(
-        '@import \'EXT:just_news/Configuration/TsConfig/Page/NewsList.tsconfig\''
-    );
+// Adds page TypoScript for the news list content element
+ExtensionManagementUtility::addPageTSConfig(
+    '@import \'EXT:just_news/Configuration/TsConfig/Page/NewsList.tsconfig\''
+);
 
-    // Provide icon for page tree, list view, ... :
-    \TYPO3\CMS\Core\Utility\GeneralUtility::makeInstance(\TYPO3\CMS\Core\Imaging\IconRegistry::class)
-        ->registerIcon(
-            'apps-pagetree-justnews',
-            TYPO3\CMS\Core\Imaging\IconProvider\SvgIconProvider::class,
-            [
-                'source' => 'EXT:just_news/Resources/Public/Icons/NewsArticle.svg',
-            ]
-        );
-    \TYPO3\CMS\Extbase\Utility\ExtensionUtility::configurePlugin(
-        'just_news',
-        'NewsList',
+// Provide icon for page tree, list view, ... :
+GeneralUtility::makeInstance(IconRegistry::class)
+    ->registerIcon(
+        'apps-pagetree-justnews',
+        SvgIconProvider::class,
         [
-            'JustNews' => 'list'
+            'source' => 'EXT:just_news/Resources/Public/Icons/NewsArticle.svg',
         ]
     );
-})();
+ExtensionUtility::configurePlugin(
+    'just_news',
+    'NewsList',
+    [
+        'JustNews' => 'list'
+    ]
+);

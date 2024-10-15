@@ -1,9 +1,9 @@
 <?php
 
-(static function (): void {
-    TYPO3\CMS\Core\Utility\ExtensionManagementUtility::addStaticFile(
-        'just_news',
-        'Configuration/TypoScript/',
-        'News with TypoScript'
-    );
-})();
+use TYPO3\CMS\Core\Utility\ExtensionManagementUtility;
+
+ExtensionManagementUtility::addStaticFile(
+    'just_news',
+    'Configuration/TypoScript/',
+    'News with TypoScript'
+);
