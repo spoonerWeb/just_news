@@ -1,0 +1,4 @@
+name: spooner-web/just-news
+label: Just News
+dependencies:
+  - typo3/fluid-styled-content

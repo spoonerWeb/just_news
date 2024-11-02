@@ -1,0 +1,11 @@
+categories:
+  JustNews.Default:
+    label: LLL:EXT:just_news/Resources/Private/Language/locallang_be.xlf:CType.news_list
+
+settings:
+  plugin.tx_justnews.maxItems:
+    label: 'Max Items'
+    category: JustNews.Default
+    description: LLL:EXT:just_news/Resources/Private/Language/locallang_be.xlf:constants.maxItems
+    type: int
+    default: 0
