@@ -14,7 +14,7 @@ $EM_CONF[$_EXTKEY] = [
         ],
         'conflicts' => [],
         'suggests' => [
-            'paginated_processor'
+            'paginated_processor' => '*',
         ]
     ]
 ];
