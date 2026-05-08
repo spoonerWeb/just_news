@@ -1,6 +1,9 @@
 /.idea
 /.Build
+.DS_Store
+
 /config
 /var
 composer.lock
+
 
