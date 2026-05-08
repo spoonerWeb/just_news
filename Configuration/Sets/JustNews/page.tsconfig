@@ -1,0 +1,2 @@
+@import 'EXT:just_news/Configuration/TsConfig/mod/Wizard.tsconfig'
+@import 'EXT:just_news/Configuration/TsConfig/Page/NewsList.tsconfig'

@@ -9,7 +9,7 @@ $EM_CONF[$_EXTKEY] = [
     'author' => 'Thomas Löffler',
     'constraints' => [
         'depends' => [
-            'typo3' => '13.4.0-13.4.99',
+            'typo3' => '13.4.0-14.3.99',
             'fluid_styled_content' => ''
         ],
         'conflicts' => [],

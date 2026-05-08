@@ -10,9 +10,9 @@ ExtensionManagementUtility::addTcaSelectItem(
     'tt_content',
     'CType',
     [
-        $languageFilePrefix . 'CType.news_list',
-        'NewsList',
-        'apps-pagetree-justnews'
+        'label' => $languageFilePrefix . 'CType.news_list',
+        'value' => 'NewsList',
+        'icon' => 'apps-pagetree-justnews'
     ],
     'uploads',
     'after'
@@ -34,9 +34,7 @@ $GLOBALS['TCA']['tt_content']['types']['NewsList'] = [
 ];
 
 $GLOBALS['TCA']['tt_content']['ctrl']['typeicon_classes']['NewsList'] = 'apps-pagetree-justnews';
-
-$GLOBALS['TCA']['tt_content']['types']['list']['subtypes_excludelist']['NewsList'] = 'recursive,select_key,pages';
-$GLOBALS['TCA']['tt_content']['types']['list']['subtypes_addlist']['NewsList'] = 'pi_flexform';
+ExtensionManagementUtility::addToAllTCAtypes('tt_content', '--div--;Configuration,pi_flexform,', 'NewsList', 'after:subheader');
 ExtensionManagementUtility::addPiFlexFormValue(
     '',
     'FILE:EXT:just_news/Configuration/FlexForm/NewsList.xml',

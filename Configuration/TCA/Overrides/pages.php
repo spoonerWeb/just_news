@@ -56,8 +56,8 @@ ExtensionManagementUtility::addTcaSelectItem(
     $table,
     'doktype',
     [
-        $languageFilePrefix . 'news_page_type',
-        $newsDokType,
+        'label' => $languageFilePrefix . 'news_page_type',
+        'value' => $newsDokType,
     ],
     '6',
     'after'
