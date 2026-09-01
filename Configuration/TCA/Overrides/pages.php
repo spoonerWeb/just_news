@@ -19,10 +19,16 @@ ExtensionManagementUtility::addFieldsToPalette(
 );
 
 // Copy palette configuration from "editorial" to new "editorial_for_news"
-// Remove lastUpdate from palette
 $GLOBALS['TCA']['pages']['palettes']['editorial_news'] = $GLOBALS['TCA']['pages']['palettes']['editorial'];
+// Remove lastUpdated from palette in TYPO3 13.
 $GLOBALS['TCA']['pages']['palettes']['editorial_news']['showitem'] = str_replace(
     ', lastUpdated;LLL:EXT:frontend/Resources/Private/Language/locallang_tca.xlf:pages.lastUpdated_formlabel',
+    '',
+    $GLOBALS['TCA']['pages']['palettes']['editorial_news']['showitem']
+);
+// Remove lastUpdated from palette in TYPO3 14.
+$GLOBALS['TCA']['pages']['palettes']['editorial_news']['showitem'] = str_replace(
+    ', lastUpdated',
     '',
     $GLOBALS['TCA']['pages']['palettes']['editorial_news']['showitem']
 );
